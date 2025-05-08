@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+:root {
+  --text-white: #dfdfdf;
+  --white: #ffffff;
+  --cyan: #469be0;
+}
+
+.container {
+  @apply mx-auto max-w-[1320px];
+}
+body {
+  @apply bg-zinc-900;
+  color: var(--white);
+}
+.nav-links {
+  color: var(--text-white);
+}
+.get-started-btn {
+  background-color: var(--cyan);
+}
+
+.has-dropdown {
+  cursor: pointer;
+}
+.has-dropdown .dropdown {
+  background-color: var(--cyan);
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+/* .has-dropdown:hover .dropdown {
+  overflow: visible;
+} */
+
+/* Error Page */
+.error-div {
+  height: calc(100vh - 8.6rem);
+  user-select: none;
+}
+
+.error-div p {
+  font-family: "Montserrat", sans-serif;
+}
+
+.error-div h1 {
+  font-weight: 900;
+  pointer-events: none;
+}
+.error-div span {
+  letter-spacing: -50px;
+  font-family: "Montserrat", sans-serif;
+  -webkit-text-stroke: 10px #ffffff;
+}
+/* Error Page */
