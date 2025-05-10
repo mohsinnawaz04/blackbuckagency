@@ -27,6 +27,7 @@
   --white: #ffffff;
   --cyan: #469be0;
   --hover-cyan: #4490d1;
+  --charcoal: #13181b;
 }
 /* Error Page */
 .error-div {
@@ -49,8 +50,8 @@
 
 /* Default Classes and Styles */
 body {
-  @apply bg-zinc-900;
   color: var(--white);
+  background-color: var(--charcoal);
 }
 p {
   font-family: "Satoshi", sans-serif;
@@ -196,7 +197,7 @@ section.hero {
 
 .item-holder {
   padding: 3rem 0;
-  margin-bottom: 10rem;
+  /* margin-bottom: 10rem; */
   transition: all 0.3s ease;
 }
 .hover-gallery .item {
@@ -220,4 +221,14 @@ section.hero {
 }
 .item-holder:hover .arrow {
   transform: rotate(-45deg);
+}
+.item-holder:hover .item,
+.item-holder:hover .arrow svg path {
+  color: var(--cyan);
+  stroke: var(--cyan);
+}
+
+/* Portfolio */
+.portfolio p {
+  font-size: 16px;
 }

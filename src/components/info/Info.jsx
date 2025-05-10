@@ -1,5 +1,6 @@
 import React from "react";
 import HoverGallery from "./HoverGallery";
+import HoverCard from "./HoverCard";
 
 const Info = () => {
   return (
