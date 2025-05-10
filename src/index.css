@@ -1,48 +1,41 @@
 @import "tailwindcss";
-
+@font-face {
+  font-family: "Satoshi";
+  src: url(./assets/fonts/Satoshi_Complete/Fonts/TTF/Satoshi-Variable.ttf);
+}
+@font-face {
+  font-family: "Clash_Display";
+  src: url(./assets/fonts/ClashDisplay_Complete/Fonts/TTF/ClashDisplay-Variable.ttf);
+}
+@font-face {
+  font-family: "Poppins";
+  src: url(./assets/fonts/Poppins/Poppins-Regular.ttf);
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url(./assets/fonts/Poppins/Poppins-Medium.ttf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url(./assets/fonts/Poppins/Poppins-Bold.ttf);
+  font-weight: 700;
+}
 :root {
   --text-white: #dfdfdf;
   --white: #ffffff;
   --cyan: #469be0;
+  --hover-cyan: #4490d1;
 }
-
-.container {
-  @apply mx-auto max-w-[1320px];
-}
-body {
-  @apply bg-zinc-900;
-  color: var(--white);
-}
-.nav-links {
-  color: var(--text-white);
-}
-.get-started-btn {
-  background-color: var(--cyan);
-}
-
-.has-dropdown {
-  cursor: pointer;
-}
-.has-dropdown .dropdown {
-  background-color: var(--cyan);
-  height: 0;
-  overflow: hidden;
-  transition: height 0.3s ease;
-}
-/* .has-dropdown:hover .dropdown {
-  overflow: visible;
-} */
-
 /* Error Page */
 .error-div {
   height: calc(100vh - 8.6rem);
   user-select: none;
 }
-
 .error-div p {
   font-family: "Montserrat", sans-serif;
 }
-
 .error-div h1 {
   font-weight: 900;
   pointer-events: none;
@@ -53,3 +46,178 @@ body {
   -webkit-text-stroke: 10px #ffffff;
 }
 /* Error Page */
+
+/* Default Classes and Styles */
+body {
+  @apply bg-zinc-900;
+  color: var(--white);
+}
+p {
+  font-family: "Satoshi", sans-serif;
+  font-size: 18px;
+}
+.container {
+  @apply mx-auto max-w-[1320px];
+}
+.text-cyan {
+  color: var(--cyan);
+}
+
+:focus-visible {
+  outline: none;
+}
+.separator {
+  width: 100%;
+  height: 1px;
+}
+/* CSS */
+.navigation {
+  font-family: "Satoshi", sans-serif;
+  font-weight: 400;
+}
+.nav-links {
+  color: var(--text-white);
+}
+.nav-links .navigation-link:hover {
+  color: var(--hover-cyan);
+  transition: color 0.3s;
+}
+.dropdown-link {
+  color: var(--white);
+}
+.dropdown-link::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 1px;
+  background-color: var(--white);
+}
+.dropdown-link:hover::after {
+  width: 100%;
+  transition: width 0.5s;
+}
+.phone {
+  font-family: "Poppins", sans-serif;
+}
+.has-dropdown {
+  cursor: pointer;
+}
+.has-dropdown .dropdown {
+  /* From https://css.glass */
+  background: rgba(70, 155, 224, 0.56);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.4px);
+  -webkit-backdrop-filter: blur(8.4px);
+  height: 0;
+  overflow: hidden;
+  transition: height 0.5s ease;
+}
+.get-started-btn {
+  font-family: "Clash_Display", sans-serif;
+  /* border: 1px solid var(--white); */
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.get-started-btn::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--cyan);
+  z-index: -1;
+  transition: all 0.5s;
+}
+.get-started-btn:hover {
+  border: 1px solid var(--white);
+}
+.get-started-btn:hover::after {
+  left: 100%;
+}
+
+/* Hero Section */
+section.hero {
+  background-image: url(./assets/Mask.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.hero-text {
+  font-size: 7vw;
+  font-family: "Clash_Display";
+  font-weight: 500;
+}
+
+.hero-para {
+  font-family: "Satoshi", sans-serif;
+  font-size: 18px;
+}
+
+.hero-cta {
+  position: relative;
+  color: var(--cyan);
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+.stats .percentage {
+  font-size: 7rem;
+  font-family: "Clash_Display", sans-serif;
+  font-weight: 500;
+  line-height: 1;
+}
+.stats h4,
+.stats-para {
+  font-family: "Satoshi", sans-serif;
+  font-size: 18px;
+}
+
+/* About Us */
+.info-heading {
+  font-size: 6rem;
+  font-family: "Clash_Display", sans-serif;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.hover-gallery .item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+}
+
+.item-holder {
+  padding: 3rem 0;
+  margin-bottom: 10rem;
+  transition: all 0.3s ease;
+}
+.hover-gallery .item {
+  font-size: 5rem;
+  font-family: "Clash_Display", sans-serif;
+  font-weight: 500;
+}
+
+.item-holder .hover-para {
+  max-height: 0;
+  overflow: hidden;
+  margin-top: -1rem;
+  transition: max-height 0.5s ease;
+}
+.item-holder:hover .hover-para {
+  max-height: 48px;
+}
+.arrow {
+  display: inline-block; /* Required for transform on spans */
+  transition: transform 0.3s ease;
+}
+.item-holder:hover .arrow {
+  transform: rotate(-45deg);
+}
