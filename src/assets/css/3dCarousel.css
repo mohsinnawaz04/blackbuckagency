@@ -1,0 +1,88 @@
+body {
+  background: #333;
+  padding: 70px 0;
+  font: 15px/20px Arial, sans-serif;
+}
+
+.carousel-container {
+  margin: 0 auto;
+  width: 250px;
+  height: 200px;
+  position: relative;
+  perspective: 1000px;
+}
+
+.carousel {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.carousel-item {
+  display: block;
+  position: absolute;
+  background: #000;
+  width: 250px;
+  height: 200px;
+  line-height: 200px;
+  font-size: 5em;
+  text-align: center;
+  color: #fff;
+  opacity: 0.95;
+  border-radius: 10px;
+  transition: transform 0.3s ease; /* Ensure smooth scaling */
+  pointer-events: auto; /* Ensure clicks are registered */
+}
+
+.carousel-item.centereditem {
+  border: 2px solid red; /* Debug: Highlight centered item */
+}
+
+.carousel-item-text {
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  transform: translate(-50%, -50%) translateY(50px);
+  opacity: 0;
+  color: #fff;
+  font-size: 20px;
+  transition: opacity 1s ease, transform 1s ease;
+  pointer-events: none;
+}
+
+.carousel-item-text.visible {
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+
+.carousel-item.scaled .carousel-item-text {
+  opacity: 1;
+  transform: translate(-50%, -50%) translateY(0);
+}
+
+.a {
+  transform: rotateY(0deg) translateZ(250px);
+  background: #ed1c24;
+}
+.b {
+  transform: rotateY(60deg) translateZ(250px);
+  background: #0072bc;
+}
+.c {
+  transform: rotateY(120deg) translateZ(250px);
+  background: #39b54a;
+}
+.d {
+  transform: rotateY(180deg) translateZ(250px);
+  background: #f26522;
+}
+.e {
+  transform: rotateY(240deg) translateZ(250px);
+  background: #630460;
+}
+.f {
+  transform: rotateY(300deg) translateZ(250px);
+  background: #8c6239;
+}
