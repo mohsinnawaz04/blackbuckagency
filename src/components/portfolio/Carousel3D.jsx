@@ -5,7 +5,6 @@ const Carousel3D = () => {
   const [currDeg, setCurrDeg] = useState(0);
   const [scaledItem, setScaledItem] = useState(null); // Track scaled item
   const [textVisibleItem, setTextVisibleItem] = useState(null);
-
   const isDragging = useRef(false);
   const startX = useRef(0);
   const startDeg = useRef(0);
@@ -14,12 +13,12 @@ const Carousel3D = () => {
 
   // Item angles and text corresponding to classes a, b, c, d, e, f
   const itemData = {
-    a: { angle: 0, text: "Item A" },
-    b: { angle: 60, text: "Item B" },
-    c: { angle: 120, text: "Item C" },
-    d: { angle: 180, text: "Item D" },
-    e: { angle: 240, text: "Item E" },
-    f: { angle: 300, text: "Item F" },
+    a: { angle: 0, text: "Lumira" },
+    b: { angle: 60, text: "Tajreed" },
+    c: { angle: 120, text: "Serenity" },
+    d: { angle: 180, text: "MoveMint" },
+    e: { angle: 240, text: "Latte Skin" },
+    f: { angle: 300, text: "Nexus" },
   };
 
   // Find the centered item based on currDeg
@@ -37,7 +36,6 @@ const Carousel3D = () => {
         Math.abs((((invertedDeg - angle) % 360) + 360) % 360)
       );
       if (diff < minDiff && diff <= 60) {
-        // Align with snap points
         minDiff = diff;
         closestItem = item;
       }
@@ -75,7 +73,6 @@ const Carousel3D = () => {
 
   const handleItemClick = (item) => {
     const centeredItem = getCenteredItem();
-    console.log("Clicked item:", item, "Centered item:", centeredItem); // Debug
     if (item === centeredItem) {
       setScaledItem(item); // Scale only the centered item
     }
@@ -85,7 +82,6 @@ const Carousel3D = () => {
   useEffect(() => {
     const handleOutsideClick = (e) => {
       if (containerRef.current && !containerRef.current.contains(e.target)) {
-        console.log("Clicked outside carousel, resetting scale"); // Debug
         setScaledItem(null);
       }
     };
@@ -93,12 +89,12 @@ const Carousel3D = () => {
     return () => document.removeEventListener("click", handleOutsideClick);
   }, []);
 
-  // New effect for delayed text appearance
+  // Effect for delayed text appearance
   useEffect(() => {
     if (scaledItem) {
       const timer = setTimeout(() => {
         setTextVisibleItem(scaledItem);
-      }, 300); // wait for scale animation
+      }, 300); // Wait for scale animation
       return () => clearTimeout(timer);
     } else {
       setTextVisibleItem(null);
@@ -123,12 +119,13 @@ const Carousel3D = () => {
           className="carousel"
           style={{ transform: `rotateY(${currDeg}deg)` }}
         >
+          {/* Carousel items */}
           {Object.keys(itemData).map((item) => (
             <div
               key={item}
-              className={`carousel-item ${item}  ${
+              className={`carousel-item ${item} ${
                 getCenteredItem() === item ? "centereditem" : ""
-              }  ${
+              } ${
                 scaledItem === item && getCenteredItem() === item
                   ? "scaled_item"
                   : ""
@@ -138,8 +135,18 @@ const Carousel3D = () => {
                 transform: `rotateY(${
                   itemData[item].angle
                 }deg) translateZ(250px) ${
-                  scaledItem === item ? "scale(1.2)" : "scale(1)"
+                  scaledItem === item ? "scale(1.5)" : "scale(1)"
                 }`,
+              }}
+            />
+          ))}
+          {/* Text overlays */}
+          {Object.keys(itemData).map((item) => (
+            <div
+              key={`text-${item}`}
+              className="carousel-text-overlay"
+              style={{
+                transform: `rotateY(${itemData[item].angle}deg) translateZ(250px)`,
               }}
             >
               {scaledItem === item && (

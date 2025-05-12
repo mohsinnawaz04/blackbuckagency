@@ -25,6 +25,7 @@ const Portfolio = () => {
         </p>
 
         <Carousel3D items={items} />
+        <div className="mt-50"></div>
       </div>
     </section>
   );
