@@ -1,18 +1,13 @@
+import { Link } from "react-router";
 import Carousel3D from "./Carousel3D";
-import CardImage from "../../assets/card-hover-image-one.png";
+import Marquee from "./Marquee";
+
+import AboutUs from "./AboutUs";
 
 const Portfolio = () => {
-  const items = [
-    { content: "Slide 1", background: "#3498db" },
-    { content: "Slide 2", background: "#e74c3c" },
-    { content: "Slide 3", background: "#2ecc71" },
-    { content: "Slide 4", background: "#f39c12" },
-    { content: "Slide 5", background: "#9b59b6" },
-    { content: "Slide 6", background: "#1abc9c" },
-  ];
   return (
     <section className="portfolio mt-36">
-      <div className="container lg:px-5">
+      <div className="container lg:px-5 hidden">
         <h2 className="info-heading text-center uppercase">
           Our Work Portfolio
         </h2>
@@ -24,9 +19,11 @@ const Portfolio = () => {
           delivering exceptional results.
         </p>
 
-        <Carousel3D items={items} />
-        <div className="mt-50"></div>
+        <Carousel3D />
       </div>
+      <Marquee margin="mt-40" />
+      <AboutUs />
+      <Marquee direction="right" />
     </section>
   );
 };

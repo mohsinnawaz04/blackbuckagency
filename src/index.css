@@ -29,6 +29,14 @@
   --hover-cyan: #4490d1;
   --charcoal: #13181b;
 }
+#smooth-wrapper {
+  overflow: hidden;
+}
+
+#smooth-content {
+  width: 100%;
+  /* Add styles to ensure smooth scrolling */
+}
 /* Error Page */
 .error-div {
   height: calc(100vh - 8.6rem);
@@ -62,6 +70,9 @@ p {
 }
 .text-cyan {
   color: var(--cyan);
+}
+.satoshi {
+  font-family: "Satoshi";
 }
 
 :focus-visible {
@@ -231,4 +242,61 @@ section.hero {
 /* Portfolio */
 .portfolio p {
   font-size: 16px;
+}
+.marque h2 {
+  font-size: 200px !important;
+  font-family: "Clash_Display";
+  font-weight: 500;
+  white-space: nowrap;
+  color: rgba(20, 24, 27, 1);
+  text-shadow: 0px 0px 50px rgba(72, 154, 224, 0.4);
+  text-align: center;
+}
+.about-us-info h2 {
+  font-size: 45px;
+  font-family: "Clash_Display", sans-serif;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.about-us-info .info::after {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 100%;
+  background-color: #313b43;
+  opacity: 1;
+  top: 0;
+  right: -10px;
+}
+.about-us-info .count {
+  font-size: 300px;
+  font-family: "Clash_Display";
+  font-weight: 400;
+  line-height: 0.8;
+}
+.about-us-info .count::after {
+  position: absolute;
+  content: "M";
+  font-size: 50px;
+  font-family: "Clash_Display";
+  top: 1rem;
+}
+.about-us-info p {
+  font-family: "Satoshi";
+  font-size: 18px;
+  max-width: 30ch;
+}
+.arrow-btn {
+  background-color: var(--cyan);
+}
+
+/* Steps */
+.steps {
+  background-image: url(./assets/images/step-bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.steps h2 {
+  font-size: 5.9rem;
 }

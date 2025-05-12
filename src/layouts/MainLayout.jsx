@@ -1,12 +1,14 @@
-import React from "react";
 import Header from "../components/common/Header";
 import { Outlet } from "react-router";
+import SmoothScroll from "../hooks/SmoothScroll";
 
 const MainLayout = () => {
   return (
     <>
-      <Header />
-      <Outlet />
+      <SmoothScroll>
+        {/* <Header /> */}
+        <Outlet />
+      </SmoothScroll>
     </>
   );
 };
