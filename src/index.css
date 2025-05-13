@@ -386,3 +386,24 @@ section.hero {
     transform: scale(1.5);
   }
 }
+
+.why-us h2 {
+  font-size: 4vw;
+}
+.card-heading {
+  font-size: 35px;
+  font-family: "Clash_Display", sans-serif;
+  color: var(--white);
+  font-weight: 500;
+}
+.why-us p {
+  font-size: 18px;
+}
+.why-us li {
+  font-family: "Poppins", sans-serif;
+}
+.work-with-us {
+  background: rgba(20, 24, 27, 1);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 0px 70px 0px rgba(72, 154, 224, 0.15);
+}
