@@ -28,6 +28,9 @@
   --cyan: #469be0;
   --hover-cyan: #4490d1;
   --charcoal: #13181b;
+  --matt-blue: #192e3e;
+  --stroke-blue: #5c7c97;
+  --border-width: 8px;
 }
 #smooth-wrapper {
   overflow: hidden;
@@ -299,4 +302,87 @@ section.hero {
 }
 .steps h2 {
   font-size: 5.9rem;
+}
+.step-card {
+  background: radial-gradient(
+        circle at 100% 100%,
+        #192e3f 0,
+        #192e3f 23px,
+        transparent 23px
+      )
+      0% 0% / 24px 24px no-repeat,
+    radial-gradient(circle at 0 100%, #192e3f 0, #192e3f 23px, transparent 23px)
+      100% 0% / 24px 24px no-repeat,
+    radial-gradient(circle at 100% 0, #192e3f 0, #192e3f 23px, transparent 23px)
+      0% 100% / 24px 24px no-repeat,
+    radial-gradient(circle at 0 0, #192e3f 0, #192e3f 23px, transparent 23px)
+      100% 100% / 24px 24px no-repeat,
+    linear-gradient(#192e3f, #192e3f) 50% 50% / calc(100% - 2px)
+      calc(100% - 48px) no-repeat,
+    linear-gradient(#192e3f, #192e3f) 50% 50% / calc(100% - 48px)
+      calc(100% - 2px) no-repeat,
+    linear-gradient(rgba(255, 255, 255, 0.5) 0%, rgba(72, 154, 224, 0.5) 100%);
+  font-family: "Satoshi", sans-serif;
+  height: max-content;
+}
+.step-card .num {
+  font-size: 80px;
+  font-family: "Clash_Display", sans-serif;
+  /* Prefix required. Even Firefox only supports the -webkit- prefix */
+  -webkit-text-stroke-color: var(--stroke-blue);
+  -webkit-text-stroke-width: 1.5px;
+  font-weight: 500;
+  color: transparent;
+  transition: color 0.3s ease;
+  line-height: 1;
+}
+.step-card:hover .num {
+  color: var(--stroke-blue);
+}
+.step-card .card-title {
+  font-size: 18px;
+}
+.step-card p {
+  font-size: 16px;
+}
+.step-cards .step-card:nth-child(2),
+.step-cards .step-card:nth-child(3) {
+  margin-top: 7rem;
+}
+.pulse {
+  background-color: var(--matt-blue);
+}
+.pulse::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: var(--border-width) solid var(--white);
+  border-radius: 50%;
+  animation: beat 1.5s linear infinite;
+  animation-delay: 1.2s;
+}
+.pulse::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: var(--border-width) solid var(--white);
+  border-radius: 50%;
+  animation: beat 1.5s linear infinite;
+}
+
+@keyframes beat {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
 }
