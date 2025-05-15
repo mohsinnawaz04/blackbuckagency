@@ -5,10 +5,10 @@ import SmoothScroll from "../hooks/SmoothScroll";
 const MainLayout = () => {
   return (
     <>
-      <SmoothScroll>
-        {/* <Header /> */}
-        <Outlet />
-      </SmoothScroll>
+      {/* <SmoothScroll> */}
+      <Header />
+      <Outlet />
+      {/* </SmoothScroll> */}
     </>
   );
 };
