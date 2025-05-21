@@ -1,4 +1,5 @@
 import Hero from "../components/common/Hero";
+import Contact from "../components/contact/Contact";
 import Info from "../components/info/Info";
 import Portfolio from "../components/portfolio/Portfolio";
 import Steps from "../components/steps/Steps";
@@ -14,6 +15,7 @@ const Home = () => {
       <Steps />
       <WhyUs />
       <Testimonials />
+      <Contact />
     </>
   );
 };

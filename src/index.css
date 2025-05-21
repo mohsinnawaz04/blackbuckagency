@@ -24,11 +24,14 @@
 }
 :root {
   --text-white: #dfdfdf;
+  --text-grey: #ffffff99;
   --white: #ffffff;
   --cyan: #469be0;
   --hover-cyan: #4490d1;
   --charcoal: #13181b;
   --matt-blue: #192e3e;
+  --slate-dark: #0d1317;
+  --slate-light: #182f3f;
   --stroke-blue: #5c7c97;
   --border-width: 8px;
 }
@@ -521,4 +524,65 @@ section.hero {
     rgba(20, 15, 42, 0) 100%
   );
   width: max-content;
+}
+
+/* Contact Form */
+.contact-us {
+  background: linear-gradient(90deg, #0d1317 50%, rgba(25, 46, 63, 1) 50%);
+  margin-bottom: 20rem; /* Temp */
+  border-bottom-left-radius: 9rem;
+  border-top-right-radius: 9rem;
+}
+.country {
+  background-color: var(--slate-light);
+}
+.country_name,
+.office_info {
+  font-family: "Poppins", sans-serif;
+}
+
+.contact-details {
+  color: var(--text-grey);
+  font-family: "Satoshi", sans-serif;
+  font-size: 16px;
+}
+.contact-details p {
+  font-weight: 600;
+}
+
+.contact-form-wrapper {
+  font-family: "Poppins", sans-serif;
+}
+.contact-form h2,
+.contact-form button {
+  font-family: "Clash_Display", sans-serif;
+}
+
+.form-group input {
+  width: 100%;
+  border-bottom: 1px solid var(--white);
+  transition: border 0.3s;
+}
+.form-group input:focus {
+  border-bottom: 1px solid var(--cyan);
+}
+
+.contact-form .btn-submit {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.contact-form .btn-submit::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--cyan);
+  z-index: -1;
+  transition: all 0.3s;
+}
+.contact-form .btn-submit:hover::after {
+  width: 100%;
 }
