@@ -34,6 +34,7 @@
   --slate-light: #182f3f;
   --stroke-blue: #5c7c97;
   --border-width: 8px;
+  --accordion-grey: #1d3040;
 }
 #smooth-wrapper {
   overflow: hidden;
@@ -529,7 +530,6 @@ section.hero {
 /* Contact Form */
 .contact-us {
   background: linear-gradient(90deg, #0d1317 50%, rgba(25, 46, 63, 1) 50%);
-  margin-bottom: 20rem; /* Temp */
   border-bottom-left-radius: 9rem;
   border-top-right-radius: 9rem;
 }
@@ -585,4 +585,109 @@ section.hero {
 }
 .contact-form .btn-submit:hover::after {
   width: 100%;
+}
+
+/* FAQ */
+.faq h2 {
+  font-family: "Clash_Display", sans-serif;
+  font-weight: 500;
+}
+.faq p {
+  font-size: 16px;
+}
+
+.faq .accordion {
+  background-color: var(--accordion-grey);
+  max-height: 90px;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+.faq .accordion.opened {
+  max-height: 300px;
+}
+.faq .accordion.opened button::after {
+  transform: translateY(-50%) rotate(180deg);
+  background-image: url("./assets/cross.png");
+}
+
+.faq .accordion button {
+  position: relative;
+  z-index: 1;
+}
+.faq .accordion button::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background-image: url("./assets/star.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  transition: all 0.4s ease;
+}
+
+.faq .accordion-title {
+  font-family: "Clash_Display", sans-serif;
+  font-weight: 500;
+}
+.faq .accordion-desc,
+.faq ul li {
+  font-family: "Satoshi", sans-serif;
+  font-size: 20px;
+  overflow-y: hidden;
+}
+.faq ul {
+  list-style: disc;
+}
+
+/* Footer */
+.footer {
+  position: relative;
+  z-index: 1;
+  padding-top: 30rem;
+  padding-bottom: 1rem;
+}
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url(./assets/Mask.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  transform: rotate(180deg);
+  z-index: -1;
+}
+
+.footer h5,
+.footer h4 {
+  font-family: "Clash_Display", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+.footer h4 {
+  font-size: 32px;
+}
+.footer p,
+.footer ul {
+  font-size: 16px;
+  font-family: "Satoshi", sans-serif;
+}
+.footer ul {
+  font-size: 14px;
+  opacity: 0.6;
+  font-weight: 300;
+}
+.footer .social-icon {
+  width: 40px;
+  height: 40px;
+  background-color: var(--cyan);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
 }
