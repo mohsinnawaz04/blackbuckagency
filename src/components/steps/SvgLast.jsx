@@ -1,7 +1,7 @@
 const SvgLast = () => {
   return (
     <svg
-      class="absolute z-10 left-1/2 -translate-x-1/2 -bottom-10"
+      className="absolute z-10 left-1/2 -translate-x-1/2 -bottom-10"
       width="170"
       height="42"
       viewBox="0 0 170 42"

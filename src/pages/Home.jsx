@@ -7,21 +7,19 @@ import Portfolio from "../components/portfolio/Portfolio";
 import Steps from "../components/steps/Steps";
 import Testimonials from "../components/testimonials/Testimonials";
 import WhyUs from "../components/why-us/WhyUs";
-import Modal from "../components/common/Modal";
 
 const Home = () => {
   return (
     <>
-      <Modal />
-      <Hero />
-      <Info />
-      <Portfolio />
-      <Steps />
-      <WhyUs />
-      <Testimonials />
-      <Contact />
-      <FAQ />
-      <Footer />
+      {/* <Hero /> */}
+      {/* <Info /> */}
+      {/* <Portfolio /> */}
+      {/* <Steps /> */}
+      {/* <WhyUs /> */}
+      {/* <Testimonials /> */}
+      {/* <Contact /> */}
+      {/* <FAQ /> */}
+      {/* <Footer /> */}
     </>
   );
 };

@@ -33,8 +33,9 @@ const FAQ = () => {
         </p>
 
         <div className="accordions-wrapper mt-20 space-y-5">
-          {faqAccordions.map((acc) => (
+          {faqAccordions.map((acc, idx) => (
             <Accordion
+              key={idx}
               title={acc.title}
               desc={acc.desc}
               list={acc.list ? acc.list : false}

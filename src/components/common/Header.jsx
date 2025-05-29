@@ -5,7 +5,8 @@ import { ChevronDown } from "lucide-react";
 import { Phone } from "lucide-react";
 import { useRef } from "react";
 import { useState } from "react";
-const Header = () => {
+import Modal from "./modal";
+const Header = ({ toggleModal }) => {
   const dropdownRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -23,6 +24,7 @@ const Header = () => {
       setIsHovered(false);
     }
   };
+
   return (
     <header className="absolute top-0 z-50 mx-auto w-full">
       <nav className="container mt-5">
@@ -96,7 +98,10 @@ const Header = () => {
               <Phone fill="#fff" size={18} /> {"+971 56 595 2820"}
             </Link>
             <Link to={"#"}>
-              <button className="get-started-btn px-10 py-3 rounded-full">
+              <button
+                onClick={toggleModal}
+                className="get-started-btn px-10 py-3 rounded-full"
+              >
                 Get Started
               </button>
             </Link>
