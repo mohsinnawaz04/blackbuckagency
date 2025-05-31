@@ -103,12 +103,13 @@
 
 /* Default Classes and Styles */
 * {
-  cursor: none;
+  /* cursor: none; */
 }
 body {
   color: var(--white);
   background-color: var(--charcoal);
 }
+
 p {
   font-family: "Satoshi", sans-serif;
   font-size: 18px;
@@ -156,6 +157,7 @@ input[type="number"] {
 }
 .dropdown-link {
   color: var(--white);
+  position: relative;
 }
 .dropdown-link::after {
   position: absolute;
@@ -177,15 +179,11 @@ input[type="number"] {
   cursor: pointer;
 }
 .has-dropdown .dropdown {
-  /* From https://css.glass */
   background: rgba(70, 155, 224, 0.56);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8.4px);
   -webkit-backdrop-filter: blur(8.4px);
-  height: 0;
-  overflow: hidden;
-  transition: height 0.5s ease;
 }
 .get-started-btn {
   font-family: "Clash_Display", sans-serif;
@@ -799,4 +797,10 @@ section.hero {
 }
 .modal .get-started-btn:hover::after {
   width: 100%;
+}
+
+@media (max-width: 1023px) {
+  .glass-effect {
+    @apply bg-[rgba(30,53,80,0.49)] rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-[13px] border border-[rgba(30,53,80,0.01)];
+  }
 }

@@ -13,7 +13,7 @@ const MainLayout = () => {
   };
   return (
     <>
-      <CustomCursor />
+      {/* <CustomCursor /> */}
       <Modal isModalOpen={isModalOpen} toggleModal={toggleModal} />{" "}
       {/* Always render modal outside of SmoothScroll */}
       {/* <SmoothScroll> */}
