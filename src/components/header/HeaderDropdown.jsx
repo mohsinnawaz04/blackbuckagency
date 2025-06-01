@@ -6,9 +6,7 @@ import { useIsDesktop } from "../../hooks/useIsDesktop.jsx";
 import { useRef } from "react";
 import { useEffect } from "react";
 
-const HeaderDropdown = () => {
-  const [submenuOpen, setSubmenuOpen] = useState(false);
-
+const HeaderDropdown = ({ submenuOpen, setSubmenuOpen }) => {
   const closeTimeoutRef = useRef(null);
   const isDesktop = useIsDesktop();
 

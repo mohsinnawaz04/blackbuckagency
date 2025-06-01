@@ -1,4 +1,4 @@
-import Header from "../components/common/Header";
+import Header from "../components/header/Header";
 import { Outlet } from "react-router";
 import SmoothScroll from "../hooks/SmoothScroll";
 import CustomCursor from "../components/common/CustomCursor";
@@ -17,7 +17,7 @@ const MainLayout = () => {
       <Modal isModalOpen={isModalOpen} toggleModal={toggleModal} />{" "}
       {/* Always render modal outside of SmoothScroll */}
       {/* <SmoothScroll> */}
-      <Header toggleModal={toggleModal} />
+      {/* <Header toggleModal={toggleModal} /> */}
       <Outlet />
       {/* </SmoothScroll> */}
     </>

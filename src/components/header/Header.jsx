@@ -1,9 +1,9 @@
 import logo from "../../assets/logo.png";
 import { Link } from "react-router";
 import { Phone } from "lucide-react";
-import HamburgerToggle from "./HamburgerToggle";
+import HamburgerToggle from "../common/HamburgerToggle";
 import { useState } from "react";
-import HeaderNavigation from "../header/HeaderNavigation";
+import HeaderNavigation from "./HeaderNavigation";
 
 const Header = ({ toggleModal }) => {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);

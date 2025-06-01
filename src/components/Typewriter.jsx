@@ -39,6 +39,20 @@ const Typewriter = () => {
         repeat={Infinity}
         cursor={false}
       />
+
+      {/* Hidden Placeholder for height stability */}
+      <span
+        aria-hidden="true"
+        style={{
+          visibility: "hidden",
+          fontSize: "8vw",
+          display: "inline-block",
+          fontFamily: "Clash_Display, sans-serif",
+          fontWeight: "500",
+        }}
+      >
+        I
+      </span>
     </span>
   );
 };

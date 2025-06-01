@@ -1,5 +1,3 @@
-import { Link } from "react-router";
-import ArrowRight from "./ArrowRight";
 import HoverCard from "./HoverCard";
 import cardImageOne from "../../assets/card-hover-image-one.png";
 

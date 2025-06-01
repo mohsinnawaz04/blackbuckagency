@@ -5,15 +5,10 @@ import { Link } from "react-router";
 import { motion, AnimatePresence } from "motion/react";
 
 const HeaderNavigation = ({ menuOpen }) => {
-  const isDesktop = useIsDesktop();
-  const [height, setHeight] = useState(0);
-  const contentRef = useRef(null);
+  const [submenuOpen, setSubmenuOpen] = useState(false);
 
-  useEffect(() => {
-    if (contentRef.current) {
-      setHeight(contentRef.current.scrollHeight);
-    }
-  }, [menuOpen, isDesktop]);
+  const isDesktop = useIsDesktop();
+  console.log("Desktop Size", isDesktop);
 
   const isVisible = isDesktop || menuOpen;
 
@@ -21,13 +16,14 @@ const HeaderNavigation = ({ menuOpen }) => {
     <AnimatePresence initial={false}>
       {isVisible && (
         <motion.div
+          layout // This enables automatic layout animation
           initial={{ height: 0, opacity: 0 }}
-          animate={{ height, opacity: 1 }}
+          animate={{ height: "auto", opacity: 1 }}
           exit={{ height: 0, opacity: 0 }}
           transition={{ duration: 0.4, ease: "easeInOut" }}
-          className="navigation glass-effect absolute top-20 w-full max-w-[90%] overflow-hidden lg:static lg:w-fit lg:h-auto lg:overflow-visible"
+          className="navigation glass-effect absolute top-20 left-1/2 -translate-x-1/2 w-full max-w-[90%] overflow-hidden lg:static lg:w-fit lg:overflow-visible lg:-translate-0"
         >
-          <div ref={contentRef}>
+          <div>
             <ul className="flex flex-col items-center w-full gap-5 bg-white/10 text-white nav-links py-7 px-5 grow rounded-2xl lg:rounded-full lg:py-3 lg:flex-row 2xl:px-14 2xl:gap-14">
               <li>
                 <Link
@@ -47,7 +43,10 @@ const HeaderNavigation = ({ menuOpen }) => {
               </li>
 
               {/* Dropdown List Item */}
-              <HeaderDropdown />
+              <HeaderDropdown
+                submenuOpen={submenuOpen}
+                setSubmenuOpen={setSubmenuOpen}
+              />
               {/* Dropdown List Item */}
 
               <li>

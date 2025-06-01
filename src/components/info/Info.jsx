@@ -1,13 +1,11 @@
-import React from "react";
 import HoverGallery from "./HoverGallery";
-import HoverCard from "./HoverCard";
 
 const Info = () => {
   return (
     <section className="about-us">
       <div className="container px-5">
         <div className="text space-y-5">
-          <h2 className="info-heading">
+          <h2 className="info-heading text-[6.5vw] lg:text-[5vw]">
             BRANDING AGENCY THAT Runs Faster Than Your Competitors
           </h2>
           <p className="font-bold">
