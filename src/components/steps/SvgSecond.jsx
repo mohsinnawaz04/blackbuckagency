@@ -1,8 +1,10 @@
 const SvgSecond = ({ mirror = false }) => {
   return (
     <svg
-      className={`absolute z-10 second ${
-        mirror ? "-scale-x-100 right-60 bottom-18" : "left-56 bottom-24"
+      className={`absolute z-10 second  hidden lg:block ${
+        mirror
+          ? "-scale-x-100 right-46 bottom-18 xl:right-54 xl:bottom-12"
+          : "left-46 bottom-18 xl:left-52 xl:bottom-18"
       }`}
       width="104"
       height="42"

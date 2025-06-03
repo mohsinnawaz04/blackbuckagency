@@ -29,11 +29,11 @@ const Steps = () => {
   ];
   return (
     <section className="steps py-72">
-      <div className="container mx-auto px-2 sm:px-10 xl:px-0">
+      <div className="container mx-auto px-2 sm:px-10 xl:px-5">
         <h2 className="info-heading text-center lg:px-5">
           MARKETING AGENCIES ARE EVERYWHERE… BUT WE’RE UNLIKE OTHER
         </h2>
-        <div className="step-cards flex gap-5 relative mt-40">
+        <div className="step-cards flex flex-wrap justify-center gap-5 relative mt-40 lg:flex-nowrap">
           {stepCards.map((card, idx) => (
             <StepCard
               key={idx}

@@ -398,10 +398,7 @@ section.hero {
 .step-card p {
   font-size: 16px;
 }
-.step-cards .step-card:nth-child(2),
-.step-cards .step-card:nth-child(3) {
-  margin-top: 7rem;
-}
+
 .pulse {
   background-color: var(--matt-blue);
 }
@@ -797,9 +794,20 @@ section.hero {
   width: 100%;
 }
 
-@media (max-width: 1023px) {
+@media (min-width: 1024px) {
+  .step-cards .step-card:nth-child(2),
+  .step-cards .step-card:nth-child(3) {
+    margin-top: 7rem;
+  }
+}
+
+@media (max-width: 1024px) {
   .glass-effect {
     @apply bg-[rgba(30,53,80,0.49)] rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-[13px] border border-[rgba(30,53,80,0.01)];
+  }
+
+  .step-card {
+    height: inherit;
   }
 }
 

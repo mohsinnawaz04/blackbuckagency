@@ -1,8 +1,7 @@
-const SvgFirst = () => {
+const SvgFirst = ({ width }) => {
   return (
     <svg
-      className="absolute -top-7 left-1/2 -translate-1/2 z-10"
-      width="996"
+      className="absolute -top-7 left-1/2 -translate-1/2 z-10 w-[800px] hidden lg:block xl:w-[996px]"
       height="60"
       viewBox="0 0 996 60"
       fill="none"
