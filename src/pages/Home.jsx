@@ -11,10 +11,10 @@ import WhyUs from "../components/why-us/WhyUs";
 const Home = () => {
   return (
     <>
-      <Hero />
-      <Info />
+      {/* <Hero /> */}
+      {/* <Info /> */}
       {/* <Portfolio /> */}
-      {/* <Steps /> */}
+      <Steps />
       {/* <WhyUs /> */}
       {/* <Testimonials /> */}
       {/* <Contact /> */}

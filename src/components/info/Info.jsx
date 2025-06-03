@@ -3,7 +3,7 @@ import HoverGallery from "./HoverGallery";
 const Info = () => {
   return (
     <section className="about-us">
-      <div className="container px-5">
+      <div className="container mx-auto px-2 sm:px-10 xl:px-0">
         <div className="text space-y-5">
           <h2 className="info-heading text-[6.5vw] lg:text-[5vw]">
             BRANDING AGENCY THAT Runs Faster Than Your Competitors

@@ -7,8 +7,8 @@ import AboutUs from "./AboutUs";
 const Portfolio = () => {
   return (
     <section className="portfolio mt-36">
-      <div className="container lg:px-5 hidden">
-        <h2 className="info-heading text-center uppercase">
+      <div className="container mx-auto px-2 sm:px-10 xl:px-0">
+        <h2 className="info-heading text-center uppercase text-[6.5vw] lg:text-[5vw]">
           Our Work Portfolio
         </h2>
         <p className="text-center mt-5">

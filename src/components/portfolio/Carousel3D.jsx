@@ -102,7 +102,7 @@ const Carousel3D = () => {
   }, [scaledItem]);
 
   return (
-    <main className="relative mt-48 mb-28">
+    <main className="relative mt-20 mb-28 lg:mt-48 lg:mb-20">
       <div
         className="carousel-container"
         ref={containerRef}

@@ -6,10 +6,10 @@ import AboutUsCoverImage from "../../assets/images/about-us-image.png";
 
 const AboutUs = () => {
   return (
-    <div className="container mt-10 lg:px-5">
-      <div className="grid grid-cols-3 about-us-info">
-        <div className="col-span-2">
-          <h2>
+    <div className="container mt-10 mx-auto px-2 sm:px-10 xl:px-5">
+      <div className="about-us-info grid grid-cols-3 gap-28 lg:gap-5">
+        <div className="col-span-3 lg:col-span-2">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl">
             BEST BRANDING AGENCY DUBAI <br /> THAT PROVIDES BRILLIANT <br />{" "}
             IDEAS TO FORMULATE <br /> BRANDING
           </h2>
@@ -27,9 +27,10 @@ const AboutUs = () => {
                 We have helped close to hundred global brands, with many of them
                 on track to becoming unbeatable in their industries.
               </p>
+              {/* Rotating Text Animation */}
               <Link
                 to={"/"}
-                className="rotating-text relative ms-5 flex justify-center items-center w-fit"
+                className="rotating-text relative ms-5 flex justify-center items-center w-fit scale-75 sm:scale-100"
               >
                 <img
                   src={rotatingText}
@@ -44,7 +45,7 @@ const AboutUs = () => {
             </div>
           </div>
         </div>
-        <div className="col-span-1 overflow-hidden rounded-4xl scale-125">
+        <div className="col-span-3 max-w-xs h-fit rounded-4xl mx-auto overflow-hidden sm:max-w-md lg:col-span-1">
           <img src={AboutUsCoverImage} alt="About Us Cover Image" />
         </div>
       </div>

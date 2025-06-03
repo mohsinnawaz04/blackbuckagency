@@ -27,10 +27,7 @@ const Marquee = ({ direction = "left", margin = "mt-0" }) => {
 
   return (
     <div className={`${margin} overflow-hidden`}>
-      <div
-        ref={marqueeRef}
-        className="flex text-[150px] whitespace-nowrap marque"
-      >
+      <div ref={marqueeRef} className="flex whitespace-nowrap marque">
         {Array(12)
           .fill("BlackBuck Agency")
           .map((text, index) => (
