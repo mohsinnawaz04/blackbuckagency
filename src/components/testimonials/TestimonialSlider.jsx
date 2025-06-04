@@ -1,7 +1,26 @@
-import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { Splide } from "@splidejs/react-splide";
 import "@splidejs/splide/dist/css/splide.min.css";
+import Slide from "./Slide";
 
 const TestimonialSlider = () => {
+  const slides = [
+    {
+      title: "We're reaching clients we never thought possible…",
+      desc: "The results we have got so far are outstanding! Our bookings have increased, and we're reaching clients we never thought possible",
+      author: "Jordan R",
+    },
+    {
+      title: "They took the stress out of branding…",
+      desc: "Black Buck delivered exactly what we needed, right on time. My website and socials were all muddled but thanks to them we now have a decent website to show our clients",
+      author: "Maya Y",
+    },
+    {
+      title: "Their expertise in branding helped us stand out…",
+      desc: "Black Buck worked on our social media campaigns. Now, we're seeing direct traffic, increased online orders, and genuine connections with community.",
+      author: "Ahlam J.",
+    },
+  ];
+
   return (
     <Splide
       options={{
@@ -12,40 +31,23 @@ const TestimonialSlider = () => {
         interval: 2000,
         speed: 1000,
         arrows: false,
-        autoplay: true,
+        autoplay: false,
+        breakpoints: {
+          768: {
+            padding: "10vw",
+          },
+        },
       }}
       aria-label="My Favorite Images"
     >
-      <SplideSlide>
-        <div className="slide flex flex-col items-center gap-8">
-          <h2>They took the stress out of branding…</h2>
-          <p>
-            The results we have got so far are outstanding! Our bookings have
-            increased, and we're reaching clients we never thought possible
-          </p>
-          <p className="client_name mt-5">Jordan R</p>
-        </div>
-      </SplideSlide>
-      <SplideSlide>
-        <div className="slide flex flex-col items-center gap-8">
-          <h2>They took the stress out of branding…</h2>
-          <p>
-            The results we have got so far are outstanding! Our bookings have
-            increased, and we're reaching clients we never thought possible
-          </p>
-          <p className="client_name mt-5">Jordan R</p>
-        </div>
-      </SplideSlide>
-      <SplideSlide>
-        <div className="slide flex flex-col items-center gap-8">
-          <h2>They took the stress out of branding…</h2>
-          <p>
-            The results we have got so far are outstanding! Our bookings have
-            increased, and we're reaching clients we never thought possible
-          </p>
-          <p className="client_name mt-5">Jordan R</p>
-        </div>
-      </SplideSlide>
+      {slides.map((slide, idx) => (
+        <Slide
+          key={idx}
+          title={slide.title}
+          desc={slide.desc}
+          author={slide.author}
+        />
+      ))}
     </Splide>
   );
 };

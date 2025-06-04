@@ -5,23 +5,25 @@ import Marquee from "../portfolio/Marquee";
 const WhyUs = () => {
   return (
     <>
-      <div className="-mb-30">
+      <div className="-mb-10 xl:-mb-30">
         <Marquee />
       </div>
       <section className="why-us relative z-40">
-        <div className="container">
-          <div className="work-with-us p-14 rounded-4xl">
-            <div className="flex items-center">
-              <h2 className="info-heading lg:w-full">WHY WORK WITH US</h2>
+        <div className="container mx-auto px-2 sm:px-10 xl:px-0">
+          <div className="work-with-us px-5 py-10 lg:p-14 rounded-4xl">
+            <div className="flex items-center flex-wrap gap-5 lg:flex-nowrap">
+              <h2 className="info-heading text-[6vw] sm:text-[4vw] lg:w-full">
+                WHY WORK WITH US
+              </h2>
               <p>
                 You’ve got the problems, we’ve got the fix. Let's breathe new
                 life into your brand the way you always wanted.
               </p>
             </div>
-            <div className="grid grid-cols-12 mt-20">
-              <div className="col col-span-5">
-                <div className="step-card flex flex-col gap-10 w-full rounded-3xl px-10 py-14">
-                  <h3 className="card-heading">
+            <div className="grid grid-cols-7 gap-10 mt-5 lg:gap-0 lg:mt-20">
+              <div className="col col-span-7 lg:col-span-3">
+                <div className="step-card flex flex-col gap-10 w-full rounded-3xl px-5 sm:px-7 xl:px-10 py-14">
+                  <h3 className="card-heading text-2xl sm:text-3xl lg:text-4xl">
                     Here’s how we get things rolling
                   </h3>
                   <p className="card-desc">
@@ -52,7 +54,7 @@ const WhyUs = () => {
                   </ul>
                 </div>
               </div>
-              <div className="col col-span-7 rounded-2xl ms-8 overflow-hidden">
+              <div className="col col-span-7 rounded-2xl overflow-hidden lg:col-span-4 lg:ms-8">
                 <img
                   src={benefitsImg}
                   className="size-full object-cover"
@@ -63,7 +65,7 @@ const WhyUs = () => {
           </div>
         </div>
       </section>
-      <div className="-mt-32">
+      <div className="-mt-10 xl:-mt-32">
         <Marquee direction="right" />
       </div>
     </>

@@ -1,6 +1,13 @@
 import Accordion from "./Accordion";
+import { useState } from "react";
 
 const FAQ = () => {
+  const [openIndex, setOpenIndex] = useState(0); // First open by default
+
+  const handleToggle = (index) => {
+    setOpenIndex((prevIndex) => (prevIndex === index ? null : index));
+  };
+
   const faqAccordions = [
     {
       title: "How long does the branding process take?",
@@ -23,8 +30,8 @@ const FAQ = () => {
   ];
   return (
     <section className="faq pt-30 -mb-[21.5rem] relative z-50">
-      <div className="container">
-        <h2 className="capitalize text-center text-8xl leading-28 max-w-[10ch] mx-auto">
+      <div className="container mx-auto px-2 sm:px-10 xl:px-5">
+        <h2 className="capitalize text-center text-4xl leading-tight max-w-[10ch] mx-auto lg:text-[5vw]">
           frequently asked questions
         </h2>
         <p className="text-center text-base mx-auto lg:max-w-[65ch]">
@@ -39,6 +46,8 @@ const FAQ = () => {
               title={acc.title}
               desc={acc.desc}
               list={acc.list ? acc.list : false}
+              isOpen={openIndex === idx}
+              onToggle={() => handleToggle(idx)}
             />
           ))}
         </div>

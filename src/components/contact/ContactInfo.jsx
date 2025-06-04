@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import DubaiLogo from "../../assets/images/dubai.svg";
 const ContactInfo = () => {
   return (
-    <div className="contact-info col-span-1 space-y-14 pe-20">
+    <div className="contact-info col-span-2 space-y-14 lg:pe-20 lg:col-span-1">
       {/* Country Card */}
       <div className="country flex flex-col gap-5 items-center justify-center max-w-max rounded-lg p-9">
         <img src={DubaiLogo} alt="Dubai Country Logo" />
