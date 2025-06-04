@@ -1,6 +1,6 @@
 import Hero from "../components/common/Hero";
 import Contact from "../components/contact/Contact";
-import FAQ from "../components/faq/faq";
+import FAQ from "../components/faq/FAQ";
 import Footer from "../components/footer/Footer";
 import Info from "../components/info/Info";
 import Portfolio from "../components/portfolio/Portfolio";
