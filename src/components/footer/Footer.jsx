@@ -7,10 +7,10 @@ import { Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="footer ">
-      <div className="container">
-        <div className="grid grid-cols-3 gap-8">
-          <div className="col-span-1 space-y-5">
+    <footer className="footer">
+      <div className="container mx-auto px-5 sm:px-10 xl:px-0">
+        <div className="grid grid-cols-3 gap-8 space-y-5">
+          <div className="col-span-3 space-y-5 lg:col-span-1">
             <div className="img-wrapper">
               <img src={logo} alt="" />
             </div>
@@ -20,9 +20,9 @@ const Footer = () => {
               the United Arab Emirates.
             </p>
           </div>
-          <div className="col-span-1">
-            <div className="flex justify-between">
-              <div>
+          <div className="col-span-3 lg:col-span-1">
+            <div className="flex justify-around lg:justify-between">
+              <div className="text-center lg:text-start">
                 <h5>Our Company</h5>
                 <ul className="mt-5 space-y-2">
                   <li>
@@ -40,7 +40,7 @@ const Footer = () => {
                 </ul>
               </div>
 
-              <div>
+              <div className="text-center lg:text-start">
                 <h5>Services</h5>
                 <ul className="mt-5 space-y-2">
                   <li>
@@ -59,7 +59,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="col-span-1 space-y-5">
+          <div className="col-span-3 space-y-5 lg:col-span-1">
             <h4>Talk to Us!</h4>
             <div className="space-y-2">
               <Link className="block" to={"tel:+971565952820"}>

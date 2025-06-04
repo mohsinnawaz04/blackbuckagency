@@ -28,7 +28,7 @@ const Steps = () => {
     },
   ];
   return (
-    <section className="steps py-72">
+    <section className="steps pt-72 pb-20 lg:py-72">
       <div className="container mx-auto px-2 sm:px-10 xl:px-5">
         <h2 className="info-heading text-center lg:px-5">
           MARKETING AGENCIES ARE EVERYWHERE… BUT WE’RE UNLIKE OTHER

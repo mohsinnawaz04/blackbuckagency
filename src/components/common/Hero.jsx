@@ -3,8 +3,10 @@ import { Link } from "react-router";
 import Typewriter from "../Typewriter";
 import { ChevronRight } from "lucide-react";
 import HeroBottom from "../hero/HeroBottom";
+import { useOutletContext } from "react-router";
 
 const Hero = () => {
+  const [setIsModalOpen] = useOutletContext();
   return (
     <section className="relative hero pb-8 z-10 lg:pb-96">
       <video
@@ -27,7 +29,11 @@ const Hero = () => {
               business online wheels through impactful branding, web creation,
               designing, app development, and animation
             </p>
-            <Link to={"#"} className="flex justify-end mt-2 hero-cta">
+            <Link
+              onClick={() => setIsModalOpen((prev) => !prev)}
+              to={""}
+              className="flex justify-end mt-2 hero-cta"
+            >
               Get Started{" "}
               <span className="flex items-center relative">
                 <ChevronRight size={15} className="absolute -right-4" />

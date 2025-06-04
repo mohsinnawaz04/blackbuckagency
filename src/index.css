@@ -103,7 +103,7 @@
 
 /* Default Classes and Styles */
 * {
-  /* cursor: none; */
+  cursor: none;
 }
 body {
   color: var(--white);
@@ -180,7 +180,7 @@ input[type="number"] {
   cursor: pointer;
 }
 .has-dropdown .dropdown {
-  background: rgba(70, 155, 224, 0.56);
+  background: #2e95e88f;
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8.4px);
@@ -787,7 +787,7 @@ section.hero {
 
 @media (max-width: 1024px) {
   .glass-effect {
-    @apply bg-[rgba(30,53,80,0.49)] rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-[13px] border border-[rgba(30,53,80,0.01)];
+    @apply bg-[#0a8dff36] rounded-2xl shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-[26px] border border-[rgba(30,53,80,0.01)];
   }
   .step-card {
     height: inherit;
@@ -813,10 +813,16 @@ section.hero {
     font-size: 5vw;
     top: 0.3rem;
   }
+  .testimonials {
+    padding: 5rem 0;
+  }
   .splide__slide {
     padding: 2.5rem 1rem;
   }
   .contact-us {
     background: linear-gradient(180deg, #0d1317 50%, rgba(25, 46, 63, 1) 50%);
+  }
+  .footer {
+    padding-top: 25rem;
   }
 }

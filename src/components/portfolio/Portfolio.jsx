@@ -1,4 +1,3 @@
-import { Link } from "react-router";
 import Carousel3D from "./Carousel3D";
 import Marquee from "./Marquee";
 
