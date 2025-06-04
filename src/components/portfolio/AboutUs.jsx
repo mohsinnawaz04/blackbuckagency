@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import ArrowRight from "../info/ArrowRight";
-import Counter from "./counter";
+import Counter from "./Counter";
 import rotatingText from "../../assets/images/rotating-text.png";
 import AboutUsCoverImage from "../../assets/images/about-us-image.png";
 
