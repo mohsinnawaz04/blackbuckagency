@@ -2,7 +2,7 @@ import Header from "../components/header/Header";
 import { Outlet } from "react-router";
 import SmoothScroll from "../hooks/SmoothScroll";
 import CustomCursor from "../components/common/CustomCursor";
-import Modal from "../components/common/modal";
+import Modal from "../components/common/Modal";
 import { useState } from "react";
 
 const MainLayout = () => {
