@@ -1,40 +1,40 @@
 import { useState, useRef, useEffect } from "react";
 
-export const useHoverFollow = (delay = 0.1) => {
+export const useHoverFollow = (delay = 0.05, exitDelay = 300) => {
   const [isHovering, setIsHovering] = useState(false);
-  const [isExiting, setIsExiting] = useState(false); // New state for exit animation
+  const [isExiting, setIsExiting] = useState(false);
   const [targetPosition, setTargetPosition] = useState({ x: 0, y: 0 });
   const [currentPosition, setCurrentPosition] = useState({ x: 0, y: 0 });
+
   const parentRef = useRef(null);
-  const animationRef = useRef();
-  const exitTimeoutRef = useRef();
+  const animationRef = useRef(null);
+  const exitTimeoutRef = useRef(null);
 
   const handleMouseMove = (e) => {
-    if (parentRef.current) {
-      const { left, top } = parentRef.current.getBoundingClientRect();
-      setTargetPosition({
-        x: e.clientX - left,
-        y: e.clientY - top,
-      });
-    }
+    if (!parentRef.current) return;
+    const rect = parentRef.current.getBoundingClientRect();
+    // Clamp position to stay within parent bounds
+    const x = Math.max(0, Math.min(e.clientX - rect.left, rect.width));
+    const y = Math.max(0, Math.min(e.clientY - rect.top, rect.height));
+    setTargetPosition({ x, y });
   };
 
   const handleMouseEnter = () => {
-    setIsExiting(false); // Cancel any pending exit
+    setIsExiting(false);
     clearTimeout(exitTimeoutRef.current);
     setIsHovering(true);
   };
 
   const handleMouseLeave = () => {
-    setIsExiting(true); // Start exit animation
+    setIsExiting(true);
     exitTimeoutRef.current = setTimeout(() => {
       setIsHovering(false);
       setIsExiting(false);
-    }, 100); // Match this with CSS transition duration
+    }, exitDelay);
   };
 
   useEffect(() => {
-    if (!isHovering) return;
+    if (!isHovering && !isExiting) return;
 
     const updatePosition = () => {
       setCurrentPosition((prev) => ({
@@ -46,19 +46,19 @@ export const useHoverFollow = (delay = 0.1) => {
 
     animationRef.current = requestAnimationFrame(updatePosition);
     return () => cancelAnimationFrame(animationRef.current);
-  }, [targetPosition, isHovering, delay]);
+  }, [targetPosition, isHovering, isExiting, delay]);
 
-  // Cleanup timeout on unmount
   useEffect(() => {
     return () => {
       clearTimeout(exitTimeoutRef.current);
+      cancelAnimationFrame(animationRef.current);
     };
   }, []);
 
   return {
     parentRef,
     isHovering,
-    isExiting, // Pass this to component
+    isExiting,
     position: currentPosition,
     handleMouseEnter,
     handleMouseLeave,
