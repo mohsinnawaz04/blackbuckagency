@@ -262,15 +262,9 @@ section.hero {
   font-weight: 500;
 }
 
-.item-holder {
-  /* margin-bottom: 10rem; */
-  transition: all 0.3s ease;
-}
-
 .item-holder .hover-para {
   max-height: 0;
   overflow: hidden;
-  margin-top: -1rem;
   transition: max-height 0.5s ease;
 }
 .item-holder:hover .hover-para {
@@ -800,6 +794,11 @@ section.hero {
 }
 
 @media (max-width: 768px) {
+  /* Disable Custom Cursor */
+  .cursor,
+  .cursor2 {
+    display: none;
+  }
   p,
   li {
     font-family: "Satoshi", sans-serif;

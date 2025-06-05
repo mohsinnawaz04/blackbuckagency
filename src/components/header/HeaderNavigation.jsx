@@ -8,8 +8,6 @@ const HeaderNavigation = ({ menuOpen }) => {
   const [submenuOpen, setSubmenuOpen] = useState(false);
 
   const isDesktop = useIsDesktop();
-  console.log("Desktop Size", isDesktop);
-
   const isVisible = isDesktop || menuOpen;
 
   return (

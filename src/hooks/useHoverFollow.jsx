@@ -30,7 +30,7 @@ export const useHoverFollow = (delay = 0.1) => {
     exitTimeoutRef.current = setTimeout(() => {
       setIsHovering(false);
       setIsExiting(false);
-    }, 300); // Match this with CSS transition duration
+    }, 100); // Match this with CSS transition duration
   };
 
   useEffect(() => {

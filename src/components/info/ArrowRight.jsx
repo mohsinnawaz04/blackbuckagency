@@ -1,4 +1,9 @@
-const ArrowRight = ({ width = 82, height = 79, stroke = 5 }) => {
+const ArrowRight = ({
+  width = 82,
+  height = 79,
+  stroke = 5,
+  color = "white",
+}) => {
   return (
     <svg
       width={width}
@@ -9,13 +14,13 @@ const ArrowRight = ({ width = 82, height = 79, stroke = 5 }) => {
     >
       <path
         d="M2.5 39.5L57.5 39.5"
-        stroke="white"
+        stroke={color}
         strokeWidth={stroke}
         strokeLinecap="round"
       ></path>
       <path
         d="M39.7734 18.4868L59.9886 38.7019C60.2636 38.977 60.2636 39.423 59.9886 39.698L39.7734 59.9132"
-        stroke="white"
+        stroke={color}
         strokeWidth={stroke}
         strokeLinecap="round"
       ></path>
