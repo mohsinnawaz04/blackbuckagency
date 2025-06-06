@@ -63,6 +63,12 @@
 }
 /* Error Page */
 
+/* Initial Loading Animation */
+.loading_div {
+  background-color: var(--charcoal);
+  z-index: 99999;
+}
+
 /* Custom Cursor */
 .cursor {
   width: 50px;
@@ -108,6 +114,16 @@
 body {
   color: var(--white);
   background-color: var(--charcoal);
+}
+
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
+.font-satoshi {
+  font-family: "Satoshi", sans-serif;
+}
+.font-clash-display {
+  font-family: "Clash_Display", sans-serif;
 }
 
 p {
