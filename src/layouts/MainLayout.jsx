@@ -4,6 +4,7 @@ import SmoothScroll from "../hooks/SmoothScroll";
 import CustomCursor from "../components/common/CustomCursor";
 import Modal from "../components/common/Modal";
 import { useState } from "react";
+import { Analytics } from "@vercel/analytics/next";
 import Loading from "../components/common/Loading";
 
 const MainLayout = () => {
@@ -15,6 +16,7 @@ const MainLayout = () => {
 
   return (
     <>
+      <Analytics />
       <CustomCursor />
       <Modal isModalOpen={isModalOpen} toggleModal={toggleModal} />{" "}
       {/* Always render modal outside of SmoothScroll */}
